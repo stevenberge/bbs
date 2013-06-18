@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2]]></item>
+	<item id="Time"><![CDATA[2012-01-10 19:11]]></item>
+	<item id="From"><![CDATA[寧海百姓網 (http://www.nhbxw.com/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[短址二維碼]]></item>
+			<item id="identifier"><![CDATA[shortcode]]></item>
+			<item id="description"><![CDATA[基于長網頁地址在手機上輸入極不方便，特開發此插件。
+寧海百姓網︰緱城依然
+http://www.nhbxw.com]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[shortcode/]]></item>
+			<item id="copyright"><![CDATA[寧海百姓網(http://www.nhbxw.com)]]></item>
+			<item id="version"><![CDATA[1.0.1]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[shortcode]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[shortcode]]></item>
+					<item id="menu"><![CDATA[短址二維碼]]></item>
+					<item id="url"><![CDATA[plugin.php?id=shortcode]]></item>
+					<item id="type"><![CDATA[24]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[短址二維碼]]></item>
+					<item id="navicon"><![CDATA[http://addon.discuz.com/resource/plugin/shortcode.png]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[頁面二維碼廣告]]></item>
+				<item id="description"><![CDATA[這里的廣告將替換頁面二維碼右側的圖片，建議*X130圖片。]]></item>
+				<item id="variable"><![CDATA[pageads]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[附件二維碼廣告]]></item>
+				<item id="description"><![CDATA[這里的廣告將替換附件二維碼右側的圖片，建議*X130圖片。]]></item>
+				<item id="variable"><![CDATA[attachads]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[二維碼廣告]]></item>
+				<item id="description"><![CDATA[這里的廣告顯示在二維碼簡介上部，輸入框下部的位置，建議530X*的圖片。]]></item>
+				<item id="variable"><![CDATA[shortads]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[開啟游客訪問]]></item>
+				<item id="description"><![CDATA[不開啟游客將不能訪問！]]></item>
+				<item id="variable"><![CDATA[guest]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[頁頭圖片鏈接]]></item>
+				<item id="description"><![CDATA[不開啟頁頭顯示文字鏈接！]]></item>
+				<item id="variable"><![CDATA[pic]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[google申請的apikey]]></item>
+				<item id="description"><![CDATA[填入google的apikey可以保留生成的短址！申請地址http://code.google.com/apis/console/不填不影響功能!]]></item>
+				<item id="variable"><![CDATA[apikey]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[騰訊申請的apikey]]></item>
+				<item id="description"><![CDATA[填入騰訊申請的apikey分享時可顯示來源網站！]]></item>
+				<item id="variable"><![CDATA[tqq]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[Jiathis分享平台的ID]]></item>
+				<item id="description"><![CDATA[不填不影響功能，填了你知道的！]]></item>
+				<item id="variable"><![CDATA[uuid]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[啟用版塊]]></item>
+				<item id="description"><![CDATA[這里選擇需要開啟附件二維碼的版塊！]]></item>
+				<item id="variable"><![CDATA[fids]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[54]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="shortcode"><![CDATA[短址二維碼]]></item>
+				<item id="text"><![CDATA[文本內容]]></item>
+				<item id="bookmark"><![CDATA[網絡書簽]]></item>
+				<item id="email"><![CDATA[電子郵件]]></item>
+				<item id="ms"><![CDATA[短信&彩信]]></item>
+				<item id="vcard"><![CDATA[聯系人]]></item>
+				<item id="short"><![CDATA[短址生成器]]></item>
+				<item id="long"><![CDATA[還原長地址]]></item>
+				<item id="diy"><![CDATA[請輸入文本內容，右邊手機中立馬生成二維碼！]]></item>
+				<item id="tips"><![CDATA[這里顯示二維碼的短址點擊即可復制哦:-)]]></item>
+				<item id="error_tips"><![CDATA[看看哪里出錯了，請改正後再提交哦:-)]]></item>
+				<item id="error_empty"><![CDATA[別急，請填寫完整後提交！]]></item>
+				<item id="error_len"><![CDATA[輸入內容過多，請精簡！]]></item>
+				<item id="error_email"><![CDATA[請檢查郵件地址是否合法！]]></item>
+				<item id="error_phone"><![CDATA[請檢查電話號碼是否正確！]]></item>
+				<item id="error_zip"><![CDATA[請檢查郵政編碼是否正確！]]></item>
+				<item id="error_url"><![CDATA[請檢查網址是否正確！]]></item>
+				<item id="error_name"><![CDATA[只能輸入中英文名稱！]]></item>
+				<item id="success_tips"><![CDATA[二維碼短址復制成功]]></item>
+				<item id="success_tips_s"><![CDATA[短地址復制成功]]></item>
+				<item id="success_tips_l"><![CDATA[長地址復制成功]]></item>
+				<item id="success_made"><![CDATA[二維碼成功生成]]></item>
+				<item id="success_made_s"><![CDATA[短地址成功生成]]></item>
+				<item id="success_made_l"><![CDATA[長地址成功還原]]></item>
+				<item id="tqqtitle"><![CDATA[我的二維碼生成了，喜歡的隨我來!]]></item>
+				<item id="dtqqtitle"><![CDATA[好工具，我喜歡!]]></item>
+				<item id="summary"><![CDATA[這里可以自動生成文本，網址，郵件，短信，聯系人等的二維碼。]]></item>
+				<item id="jiathis"><![CDATA[<div id="ckepop"><span class="jiathis_txt">分享到︰</span><a class="jiathis_button_qzone">QQ空間</a><a class="jiathis_button_tqq">騰訊微博</a><a class="jiathis_button_xiaoyou">朋友網</a><a href="http://www.jiathis.com/share{uuid}" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">查看更多</a></div><script type="text/javascript" src="http://v2.jiathis.com/code/jia.js{uuid}" charset="utf-8"></script>]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="shortcode"><![CDATA[短址二維碼]]></item>
+				<item id="text"><![CDATA[文本內容]]></item>
+				<item id="bookmark"><![CDATA[網絡書簽]]></item>
+				<item id="book_title"><![CDATA[網站名稱]]></item>
+				<item id="book_url"><![CDATA[網絡地址]]></item>
+				<item id="email"><![CDATA[電子郵件]]></item>
+				<item id="email_email"><![CDATA[郵件地址]]></item>
+				<item id="email_subject"><![CDATA[郵件標題]]></item>
+				<item id="email_message"><![CDATA[郵件內容]]></item>
+				<item id="ms"><![CDATA[短信&彩信]]></item>
+				<item id="ms_sms"><![CDATA[短信]]></item>
+				<item id="ms_mms"><![CDATA[彩信]]></item>
+				<item id="ms_phone"><![CDATA[收信號碼]]></item>
+				<item id="ms_text"><![CDATA[信息內容]]></item>
+				<item id="ms_type"><![CDATA[信息類型]]></item>
+				<item id="vcard"><![CDATA[聯系人]]></item>
+				<item id="vcard_name"><![CDATA[聯系人姓名]]></item>
+				<item id="vcard_phone"><![CDATA[聯系電話]]></item>
+				<item id="vcard_email"><![CDATA[聯系郵箱]]></item>
+				<item id="vcard_msn"><![CDATA[QQ&MSN]]></item>
+				<item id="vcard_url"><![CDATA[網站地址]]></item>
+				<item id="vcard_org"><![CDATA[公司名稱]]></item>
+				<item id="vcard_address"><![CDATA[公司地址]]></item>
+				<item id="vcard_note"><![CDATA[其他備注]]></item>
+				<item id="short"><![CDATA[短址生成器]]></item>
+				<item id="long"><![CDATA[還原長地址]]></item>
+				<item id="short_url"><![CDATA[網絡短地址]]></item>
+				<item id="long_url"><![CDATA[網絡長地址]]></item>
+				<item id="page"><![CDATA[頁面二維碼]]></item>
+				<item id="attach"><![CDATA[附件二維碼]]></item>
+				<item id="pic"><![CDATA[圖片參數]]></item>
+				<item id="pic_size"><![CDATA[尺寸]]></item>
+				<item id="pic_big"><![CDATA[大]]></item>
+				<item id="pic_middle"><![CDATA[中]]></item>
+				<item id="pic_small"><![CDATA[小]]></item>
+				<item id="pic_error"><![CDATA[容錯]]></item>
+				<item id="pic_bottum"><![CDATA[低]]></item>
+				<item id="pic_top"><![CDATA[高]]></item>
+				<item id="texthelp"><![CDATA[好的文章，片段貼入文本框立馬轉為二維碼，到手機上繼續欣賞！]]></item>
+				<item id="bookmarkhelp"><![CDATA[好的網頁，網站立馬轉為二維碼，到手機收藏隨時瀏覽！]]></item>
+				<item id="emailhelp"><![CDATA[在這可以把電子郵件轉為二維碼，轉到手機發送！]]></item>
+				<item id="mshelp"><![CDATA[手機發短信及彩信是否比較慢，在這轉為二維碼到手機發送！]]></item>
+				<item id="vcardhelp"><![CDATA[在這生成二維碼聯系人，直接可以保存到手機哦！]]></item>
+				<item id="shorthelp"><![CDATA[請在此輸入原始網絡長地址，在下面輸入框將轉換成短地址！]]></item>
+				<item id="longhelp"><![CDATA[請在此輸入要還原的短地址，在下面文本框將轉換成原始長地址！]]></item>
+				<item id="made"><![CDATA[生成二維碼]]></item>
+				<item id="down"><![CDATA[下載二維碼]]></item>
+				<item id="success_tips"><![CDATA[二維碼短址復制成功]]></item>
+				<item id="success_tips_page"><![CDATA[頁面短址復制成功]]></item>
+				<item id="success_tips_attach"><![CDATA[附件短址復制成功]]></item>
+				<item id="exsemple"><![CDATA[這是本頁網址二維碼範例]]></item>
+				<item id="tips"><![CDATA[這里顯示二維碼的短址點擊即可復制哦:-)]]></item>
+				<item id="tips_page"><![CDATA[這里顯示本頁面的短址點擊即可復制哦:-)]]></item>
+				<item id="tiplr"><![CDATA[◆]]></item>
+				<item id="know"><![CDATA[我知道了]]></item>
+				<item id="shortcode_summary"><![CDATA[<div class="bm bw0"><dl class="xld bbda"><dt class="xs2">二維QR碼</dt><dd>在這里可以將網址、文字、照片等信息一鍵生成QR碼（二維條形碼的一種），方便手機用戶識讀。</dd></dl><dl class="xld bbda"><dt class="xs2">信息量大，糾錯能力強，識讀速度快，全方位識讀</dt><dd>用戶通過手機攝像頭掃描二維碼即可實現手機快速上網，下載圖文、音樂、視頻、獲取優惠券、參與抽獎、了解企業產品信息等，而省去了在手機上輸入URL的繁瑣過程。同時，還可以方便地用手機識別和存儲名片、自動輸入短信，獲取公共服務，實現電子地圖查詢定位、手機閱讀等多種功能。</dd></dl><dl class="xld"><dt class="xs2">隨著3G的到來...</dt><dd>二維碼可以為網絡瀏覽、下載、在線視頻、網上購物、網上支付等提供方便的入口。</dd></dl></div>]]></item>
+			</item>
+		</item>
+		<item id="intro"><![CDATA[短址二維碼 1.0.1]]></item>
+		<item id="license"><![CDATA[[list]
+[*]本插件版權歸屬插件作者及寧海百姓網所有.
+[*]未經插件作者許可,任何人不得以任何形式在任何地方發布/轉發原版以及其衍生的修改版.
+[*][b]插件作者:[/b]緱城依然
+[*][b]作品簡介:[/b]本插件可讓用戶直接查看每頁面及附件下載地址的二維碼及短地址，並集成了二維碼跟短地址的生成工具.
+[*][b]發布地址:[/b][url]http://bbs.nhbxw.com/thread-486-1-1.html[/url]
+[*]如有任何關于使用上的疑問,請至[url]http://bbs.nhbxw.com/thread-486-1-1.html[/url]回復提出.
+[*]最後,感謝您使用我們的插件,也希望您能夠給我們提供更好的意見.
+[/list]]]></item>
+	</item>
+</root>

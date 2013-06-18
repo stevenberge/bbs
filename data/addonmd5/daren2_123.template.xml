@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[daren2_123.template]]></item>
+	<item id="SN"><![CDATA[2013051620i21biRml1p]]></item>
+	<item id="RevisionID"><![CDATA[16276]]></item>
+	<item id="RevisionDateline"><![CDATA[1368435190]]></item>
+	<item id="Data">
+		<item id="/common/common.css"><![CDATA[7c6e10db93c46be6590997e284808a4b]]></item>
+		<item id="/common/header.htm"><![CDATA[599241aac7d92699bff1a801e554e5ba]]></item>
+		<item id="/discuz_style_daren2_123.xml"><![CDATA[0933c272bc06a16b674fcd4a2e2d3d18]]></item>
+		<item id="/forum/discuz.htm"><![CDATA[3589c125814db4b2985fb52bf6b9d72a]]></item>
+		<item id="/forum/viewthread_node.htm"><![CDATA[19803cf24efcaf44b72804a9c0f28b26]]></item>
+		<item id="/image/background.png"><![CDATA[7c3d48fe2832da4fce999fe149ae6f0e]]></item>
+		<item id="/image/forum.gif"><![CDATA[0f79756af5527b5e135024d6855522d9]]></item>
+		<item id="/image/forum_new.gif"><![CDATA[fd3402d2d3d851a5c8cdd087796f4f9c]]></item>
+		<item id="/image/logo.png"><![CDATA[bdf9d4a96e7693eba7a27bc5f4effe90]]></item>
+		<item id="/image/titlebg.png"><![CDATA[86090d0d83c78689323b2aa90b5e90de]]></item>
+		<item id="/image/wrap_bg.png"><![CDATA[c658dcd6d3d9e5fa1925ad51db38ed8c]]></item>
+		<item id="/preview.jpg"><![CDATA[f95cdac7308e2687267b7c8eaebf1e59]]></item>
+	</item>
+</root>

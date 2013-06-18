@@ -1,0 +1,72 @@
+{template common/header}
+<!--{if $action == 'page'}-->
+<div class="tm_c">
+	<h3 class="flb">
+		<em>{lang shortcode:page}</em>
+			<span>
+				<!--{if !empty($_G['gp_infloat'])}--><a href="javascript:;" class="flbc" onclick="hideWindow('page')" title="{lang close}">{lang close}</a><!--{/if}-->
+			</span>
+	</h3>
+	<div class="c">
+		<div class="tpclg">
+			<table cellspacing="0"  cellpadding="0"  width="100%">
+                        <tr>
+                                <th><a href="http://www.nhbxw.com" target="_blank"><img src="$long_url" style="border: 1px solid #ccc;padding:5px;"/></a></th>
+                                <td align="center">
+                                        <!--{if !empty($config[pageads])}-->
+					$config[pageads]
+				        <!--{else}-->
+					<img src="source/plugin/shortcode/images/help.gif" />
+				        <!--{/if}-->
+                                </td>
+                        </tr>
+                        </table>
+                </div>
+	</div>
+        <div class="o">
+                <table cellspacing="0"  cellpadding="0"  width="100%">
+                <tr>
+                        <th>
+                                 <input type="text" class="px vm" onclick="this.select();setCopy(this.value, '{lang shortcode:success_tips_page}');"  value="$short_url" style="width:120px;" readonly="readonly" tabIndex="1" />
+                        </th>
+                        <td align="center"><a href="plugin.php?id=shortcode" onclick="hideWindow('page')" title="{lang shortcode:shortcode}" target="_blank">{lang shortcode:tips_page}</a></td>
+                </tr>
+        </table>
+</div>
+<!--{else}-->
+<div class="tm_c">
+	<h3 class="flb">
+		<em>{lang shortcode:attach}</em>
+			<span>
+				<!--{if !empty($_G['gp_infloat'])}--><a href="javascript:;" class="flbc" onclick="hideWindow('attach')" title="{lang close}">{lang close}</a><!--{/if}-->
+			</span>
+	</h3>
+	<div class="c">
+		<div class="tpclg">
+			<table cellspacing="0"  cellpadding="0"  width="100%">
+                        <tr>
+                                <th><a href="http://www.nhbxw.com" target="_blank"><img src="$long_url"  style="border: 1px solid #ccc;padding:5px;"/></a></th>
+                                <td align="center">
+                                        <!--{if !empty($config[attachads])}-->
+					$config[attachads]
+				        <!--{else}-->
+					<img src="source/plugin/shortcode/images/help.gif" />
+				        <!--{/if}-->
+                                </td>
+                        </tr>
+                        </table>
+                </div>
+	</div>
+        <div class="o">
+                <table cellspacing="0"  cellpadding="0"  width="100%">
+                <tr>
+                        <th>
+                                <input type="text" class="px vm" onclick="this.select();setCopy(this.value, '{lang shortcode:success_tips_attach}');"  value="$short_url" style="width:120px;" readonly="readonly" tabIndex="1" />
+                        </th>
+                        <td align="center"><img src="source/plugin/shortcode/images/download.gif" style="position:relative; top:3px;"> <a href="$this_url" onclick="hideWindow('attach')" target="_blank" style="font-size: 14px;">$attach[filename]</a><a href="home.php?mod=spacecp&ac=credit&op=buy" target="_blank" class="xi2"> ¡¢º¥≥‰÷µ&raquo;</a></td>
+                </tr>
+        </table>
+</div>
+<!--{/if}-->
+{template common/footer}
+

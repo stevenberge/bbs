@@ -1,0 +1,11 @@
+﻿http://219.223.222.232/bbs/forum.php?username=brando&password=brando&from_mobile=yes
+
+&username=brando&password=brando&from_mobile=yes
+
+http://219.223.222.232/bbs/forum.php?mod=post&action=newthread&topicsubmit=yes&infloat=yes&handlekey=fastnewpost&fid=78&subject=zhuti&is_to_push=true&message=contentcccccccccccc&username=brando&password=brando&from_mobile=yes
+
+
+//回主题   message是你的回帖内容  tid是你回的主题编号
+http://219.223.222.232/bbs/forum.php?mod=post&action=reply&tid=58&replysubmit=yes&infloat=yes&handlekey=fastpost
+&message=nihaomanihaomanihaomanihaoma
+&username=brando&password=brando&from_mobile=1

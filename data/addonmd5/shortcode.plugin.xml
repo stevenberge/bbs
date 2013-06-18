@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[shortcode.plugin]]></item>
+	<item id="SN"><![CDATA[2013061614cH532nN3P3]]></item>
+	<item id="RevisionID"><![CDATA[195]]></item>
+	<item id="RevisionDateline"><![CDATA[1326675060]]></item>
+	<item id="Data">
+		<item id="/class_check.php"><![CDATA[b59ff785046e04c20623e86be59001d8]]></item>
+		<item id="/class_qrcode.php"><![CDATA[60c6e9f44702df43112d1f3d96ef6902]]></item>
+		<item id="/discuz_plugin_shortcode_SC_GBK.xml"><![CDATA[93131e3cd3ab394d814d3c4b3e45d85c]]></item>
+		<item id="/discuz_plugin_shortcode_SC_UTF8.xml"><![CDATA[61e977d51b91cdada66b78648a5764e4]]></item>
+		<item id="/discuz_plugin_shortcode_TC_BIG5.xml"><![CDATA[2cbc875569a166876af829f2ea79593a]]></item>
+		<item id="/discuz_plugin_shortcode_TC_UTF8.xml"><![CDATA[21b0597cd7cbaa59cef34bf77f9701e6]]></item>
+		<item id="/images/download.gif"><![CDATA[d36c80f603cfdf6483b283626884a4e1]]></item>
+		<item id="/images/ewm.gif"><![CDATA[0bb9ab82066e90b258ac30e769e8e6fc]]></item>
+		<item id="/images/help.gif"><![CDATA[191944082c68561e98161f8007e5cccd]]></item>
+		<item id="/images/index.htm"><![CDATA[7215ee9c7d9dc229d2921a40e899ec5f]]></item>
+		<item id="/images/n_rate.png"><![CDATA[59a0f7ffa0c5cf1d6acd08ecfe97252d]]></item>
+		<item id="/images/qrbg.png"><![CDATA[9b64755a65ee26d1acbfa9880156da2c]]></item>
+		<item id="/images/sorry.gif"><![CDATA[de20eaef7dc0207bf177645e75b47a92]]></item>
+		<item id="/index.htm"><![CDATA[7215ee9c7d9dc229d2921a40e899ec5f]]></item>
+		<item id="/shortcode.class.php"><![CDATA[abd521cde8d3ea984a2ed6055bb61bfa]]></item>
+		<item id="/shortcode.inc.php"><![CDATA[5d8c45646f16417d441b3c3e017c38d5]]></item>
+		<item id="/template/float.htm"><![CDATA[6ec306bb4834b3ab79df477ae57d2c29]]></item>
+		<item id="/template/index.htm"><![CDATA[7215ee9c7d9dc229d2921a40e899ec5f]]></item>
+		<item id="/template/insert.htm"><![CDATA[051b36b7fdc7ca57d9b43825ed738403]]></item>
+		<item id="/template/shortcode.htm"><![CDATA[384584a086923a2edd261a38a62b9939]]></item>
+		<item id="/validator.xml"><![CDATA[28e8c6ef0a6fa76275d1899b9f321202]]></item>
+	</item>
+</root>

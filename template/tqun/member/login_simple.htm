@@ -1,0 +1,16 @@
+<!--{if CURMODULE != 'logging'}-->
+<script type="text/javascript" src="{$_G[setting][jspath]}logging.js?{VERHASH}"></script>
+<form method="post" autocomplete="off" id="lsform" action="member.php?mod=logging&action=login&loginsubmit=yes&infloat=yes&lssubmit=yes" onsubmit="{if $_G['setting']['pwdsafety']}pwmd5('ls_password');{/if}return lsSubmit();">
+    <span id="return_ls" style="display:none"></span>
+    <div class="header_r">
+        <div class="login"><a href="$_G['connect']['login_url']" class="QQ_dl"></a><a href="xwb.php?m=xwbAuth.login" class="sina_dl"></a><a href="member.php?mod=logging&action=login&referer={echo rawurlencode($dreferer)}" class="pt_dl"></a> <a href="member.php?mod=register" class="regist_zc"></a>
+            
+            <!--{hook/global_cpnav_extra1}-->
+        </div>
+        <!--{hook/global_login_extra}-->
+    </div>
+</form>
+<!--{/if}-->
+<style type="text/css">
+    .fastlg_fm{ display:none}
+</style> 

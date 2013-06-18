@@ -1,0 +1,22 @@
+@charset "gb2312";
+
+.plc{ background:none; padding: 0 0 0 20px}
+.pi{ border-bottom: none; padding: 0; height: 22px;}
+.yrxz h1{color: #333;font-family: "Î¢ÈíÑÅºÚ","ºÚÌå"; font-size: 22px;font-weight: 100;}
+.t_fsz{ line-height: 22px}
+#forum_l .avatar img{ width: 48px; height: 48px}
+.pls .avatar, #f_pst .avatar{margin:20px 0 0 0}
+.pls{ width: 50px; background: none}
+.pls .pi{text-align: left}
+.pls .avatar{ margin: 5px 0}
+.tedt{ width:605px !important}
+.authi_yrsz{border-bottom: 2px solid #f1f1f1 }
+.t_fsz{ margin-top: 20px}
+.pl .quote {background-color: #F7F1DF;}
+#forum_l{display:block; float:left; width:680px; height:auto; overflow: hidden; zoom: 1}
+#forum_r{ display:block; background:#f1f1f1; width:250px; height:auto; overflow: hidden;float:right;}
+#forum_r .toppic_box{ display: block; width:228px; margin: 15px auto;}
+#forum_r .titletext{font-size: 22px; color: #333; font-weight:100;font-family: "Î¢ÈíÑÅºÚ","ºÚÌå"; margin-bottom: 10px; border-top:5px solid #dbdbdb; width:250px;}
+.pi strong a{ border:none}
+.title{ height:42px; line-height:42px; padding:0}
+#nv_forum #ct{border-color: #F1F1F1;}

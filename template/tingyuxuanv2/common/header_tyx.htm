@@ -1,0 +1,242 @@
+<!--{subtemplate common/header_common}-->
+	<meta name="application-name" content="$_G['setting']['bbname']" />
+	<meta name="msapplication-tooltip" content="$_G['setting']['bbname']" />
+	<!--{if $_G['setting']['portalstatus']}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][1]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['portal']) ? 'http://'.$_G['setting']['domain']['app']['portal'] : $_G[siteurl].'portal.php'};icon-uri={$_G[siteurl]}{IMGDIR}/portal.ico" /><!--{/if}-->
+	<meta name="msapplication-task" content="name=$_G['setting']['navs'][2]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['forum']) ? 'http://'.$_G['setting']['domain']['app']['forum'] : $_G[siteurl].'forum.php'};icon-uri={$_G[siteurl]}{IMGDIR}/bbs.ico" />
+	<!--{if $_G['setting']['groupstatus']}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][3]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['group']) ? 'http://'.$_G['setting']['domain']['app']['group'] : $_G[siteurl].'group.php'};icon-uri={$_G[siteurl]}{IMGDIR}/group.ico" /><!--{/if}-->
+	<!--{if $_G['setting']['homestatus']}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][4]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['home']) ? 'http://'.$_G['setting']['domain']['app']['home'] : $_G[siteurl].'home.php'};icon-uri={$_G[siteurl]}{IMGDIR}/home.ico" /><!--{/if}-->
+	<!--{if $_G['basescript'] == 'forum' && $_G['setting']['archiver']}-->
+		<link rel="archives" title="$_G['setting']['bbname']" href="{$_G[siteurl]}archiver/" />
+	<!--{/if}-->
+	<!--{if defined('CURMODULE') && ($_G['basescript'] == 'forum' || $_G['basescript'] == 'group') && (CURMODULE == 'index' || CURMODULE == 'forumdisplay' || CURMODULE == 'group')}-->$rsshead<!--{/if}-->
+	<!--{if $_G['basescript'] == 'forum' || $_G['basescript'] == 'group'}-->
+		<!--{if $_G['basescript'] == 'forum' && empty($_G['disabledwidthauto']) && $_G['forum_widthauto']}-->
+			<link rel="stylesheet" id="css_widthauto" type="text/css" href="data/cache/style_{STYLEID}_widthauto.css?{VERHASH}" />
+			<script type="text/javascript">HTMLNODE.className += ' widthauto'</script>
+		<!--{/if}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}forum.js?{VERHASH}"></script>
+	<!--{elseif $_G['basescript'] == 'home' || $_G['basescript'] == 'userapp'}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}home.js?{VERHASH}"></script>
+	<!--{elseif $_G['basescript'] == 'portal'}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}portal.js?{VERHASH}"></script>
+	<!--{/if}-->
+	<!--{if $_G['basescript'] != 'portal' && $_GET['diy'] == 'yes' && (CURMODULE == 'topic' || $_G['group']['allowdiy']) && !empty($_G['style']['tplfile'])}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}portal.js?{VERHASH}"></script>
+	<!--{/if}-->
+	<!--{if $_GET['diy'] == 'yes' && (CURMODULE == 'topic' || $_G['group']['allowdiy']) && !empty($_G['style']['tplfile'])}-->
+	<link rel="stylesheet" type="text/css" id="diy_common" href="data/cache/style_{STYLEID}_css_diy.css?{VERHASH}" />
+	<!--{/if}-->
+<script language="javascript" type="text/javascript">
+var $ = function (id) {
+	return "string" == typeof id ? document.getElementById(id) : id;
+};
+var Class = {
+  create: function() {
+	return function() {
+	  this.initialize.apply(this, arguments);
+	}
+  }
+}
+Object.extend = function(destination, source) {
+	for (var property in source) {
+		destination[property] = source[property];
+	}
+	return destination;
+}
+var TransformView = Class.create();
+TransformView.prototype = {
+  //容器对象,滑动对象,切换参数,切换数量
+  initialize: function(container, slider, parameter, count, options) {
+	if(parameter <= 0 || count <= 0) return;
+	var oContainer = $(container), oSlider = $(slider), oThis = this;
+	this.Index = 0;//当前索引
+	this._timer = null;//定时器
+	this._slider = oSlider;//滑动对象
+	this._parameter = parameter;//切换参数
+	this._count = count || 0;//切换数量
+	this._target = 0;//目标参数
+	this.SetOptions(options);
+	this.Up = !!this.options.Up;
+	this.Step = Math.abs(this.options.Step);
+	this.Time = Math.abs(this.options.Time);
+	this.Auto = !!this.options.Auto;
+	this.Pause = Math.abs(this.options.Pause);
+	this.onStart = this.options.onStart;
+	this.onFinish = this.options.onFinish;
+	oContainer.style.overflow = "hidden";
+	oContainer.style.position = "relative";
+	oSlider.style.position = "absolute";
+	oSlider.style.top = oSlider.style.left = 0;
+  },
+  //设置默认属性
+  SetOptions: function(options) {
+	this.options = {//默认值
+		Up:			false,//是否向上(否则向左)
+		Step:		5,//滑动变化率
+		Time:		10,//滑动延时
+		Auto:		true,//是否自动转换
+		Pause:		6000,//停顿时间(Auto为true时有效)
+		onStart:	function(){},//开始转换时执行
+		onFinish:	function(){}//完成转换时执行
+	};
+	Object.extend(this.options, options || {});
+  },
+  //开始切换设置
+  Start: function() {
+	if(this.Index < 0){
+		this.Index = this._count - 1;
+	} else if (this.Index >= this._count){ this.Index = 0; }
+	
+	this._target = -1 * this._parameter * this.Index;
+	this.onStart();
+	this.Move();
+  },
+  //移动
+  Move: function() {
+	clearTimeout(this._timer);
+	var oThis = this, style = this.Up ? "top" : "left", iNow = parseInt(this._slider.style[style]) || 0, iStep = this.GetStep(this._target, iNow);
+	
+	if (iStep != 0) {
+		this._slider.style[style] = (iNow + iStep) + "px";
+		this._timer = setTimeout(function(){ oThis.Move(); }, this.Time);
+	} else {
+		this._slider.style[style] = this._target + "px";
+		this.onFinish();
+		if (this.Auto) { this._timer = setTimeout(function(){ oThis.Index++; oThis.Start(); }, this.Pause); }
+	}
+  },
+  //获取步长
+  GetStep: function(iTarget, iNow) {
+	var iStep = (iTarget - iNow) / this.Step;
+	if (iStep == 0) return 0;
+	if (Math.abs(iStep) < 1) return (iStep > 0 ? 1 : -1);
+	return iStep;
+  },
+  //停止
+  Stop: function(iTarget, iNow) {
+	clearTimeout(this._timer);
+	this._slider.style[this.Up ? "top" : "left"] = this._target + "px";
+  }
+};
+window.onload=function(){
+	function Each(list, fun){
+		for (var i = 0, len = list.length; i < len; i++) { fun(list[i], i); }
+	};
+	////////////////////////test2
+	var objs2 = $("idNum2").getElementsByTagName("li");
+	var tv2 = new TransformView("idTransformView2", "idSlider2", 445, 3, {
+		onStart: function(){ Each(objs2, function(o, i){ o.className = tv2.Index == i ? "on" : ""; }) },//按钮样式
+		Up: false
+	});
+	tv2.Start();
+	Each(objs2, function(o, i){
+		o.onmouseover = function(){
+			o.className = "on";
+			tv2.Auto = false;
+			tv2.Index = i;
+			tv2.Start();
+		}
+		o.onmouseout = function(){
+			o.className = "";
+			tv2.Auto = true;
+			tv2.Start();
+		}
+	})
+}
+</script>
+</head>
+
+<body id="nv_{$_G[basescript]}" class="pg_{CURMODULE}" onkeydown="if(event.keyCode==27) return false;">
+	<div id="append_parent"></div><div id="ajaxwaitid"></div>
+	<!--{if $_GET['diy'] == 'yes' && (CURMODULE == 'topic' || $_G['group']['allowdiy']) && !empty($_G['style']['tplfile'])}-->
+		<!--{template common/header_diy}-->
+	<!--{/if}-->
+	<!--{if CURMODULE == 'topic' && $topic && empty($topic['useheader']) && !empty($_G['style']['tplfile']) && ($_G['group']['allowdiy'] || $_G['group']['allowaddtopic'] && $topic['uid'] == $_G['uid'] || $_G['group']['allowmanagetopic'])}-->
+		<a id="diy-tg" href="javascript:openDiy();" title="{lang open_diy}" class="y"><img src="{STATICURL}image/diy/panel-toggle.png" alt="DIY" /></a>
+	<!--{/if}-->
+	<!--{if empty($topic) || $topic['useheader']}-->
+		<!--{if $_G['setting']['mobile']['allowmobile'] && (!$_G['setting']['cachethreadon'] || $_G['uid']) && ($_GET['diy'] != 'yes' || !$_GET['inajax']) && ($_G['mobile'] != '' && $_G['cookie']['mobile'] == '' && $_GET['mobile'] != 'no')}-->
+			<div class="xi1 bm bm_c">
+			    {lang your_mobile_browser}<a href="{$_G['siteurl']}forum.php?mobile=yes">{lang go_to_mobile}</a> <span class="xg1">|</span> <a href="$_G['setting']['mobile']['nomobileurl']">{lang to_be_continue}</a>
+			</div>
+		<!--{/if}-->
+        
+    <div id="Container">
+        
+        <div id="WebHead">
+            <div class="WebHead">
+                <div class="Player" id="nv">
+					<ul>
+                    	<!--{eval $mnid = getcurrentnav();}-->
+						<!--{loop $_G['setting']['navs'] $nav}-->
+							<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li {if $mnid == $nav[navid]}class="a" {/if}$nav[nav]></li><!--{/if}-->
+						<!--{/loop}-->
+					</ul>
+                    <div class="SearchWord">
+						<!--{if $_G['setting']['srchhotkeywords']}-->
+							<strong><a href="search.php" target="_blank">搜索</a></strong>
+							<!--{loop $_G['setting']['srchhotkeywords'] $val}-->
+								<!--{if $val=trim($val)}-->
+									<!--{eval $valenc=rawurlencode($val);}-->
+									<!--{block srchhotkeywords[]}--><a href="search.php?mod=forum&srchtxt=$valenc&formhash={FORMHASH}&searchsubmit=true&source=hotsearch" target="_blank" class="xi2">$val</a><!--{/block}-->
+								<!--{/if}-->
+							<!--{/loop}-->
+							<!--{echo implode('', $srchhotkeywords);}-->
+						<!--{/if}-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="Header">
+        	<!--{subtemplate common/header_nav}-->
+        </div>
+            
+        <div id="Banner">
+            <div class="Weather_duoyun">
+                <div class="WeatherImg">
+                    <div class="WeatherMaskTop">
+                        <div class="WeatherMaskBtm">
+                            <div class="Content">
+                                <div class="NRtxt">每天，我们看到的，是个精彩的世界，你不想用耳朵听一听，一样，是个精彩的世界<br />听雨轩网络电台 与音乐一起流浪</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="BannerReel"></div>
+    </div>
+    
+
+		<!--{if !IS_ROBOT}-->
+			<!--{if $_G['uid'] && !empty($_G['style']['extstyle'])}-->
+				<div id="sslct_menu" class="cl p_pop" style="display: none;">
+					<!--{if !$_G[style][defaultextstyle]}--><span class="sslct_btn" onClick="extstyle('')" title="{lang default}"><i></i></span><!--{/if}-->
+					<!--{loop $_G['style']['extstyle'] $extstyle}-->
+						<span class="sslct_btn" onClick="extstyle('$extstyle[0]')" title="$extstyle[1]"><i style='background:$extstyle[2]'></i></span>
+					<!--{/loop}-->
+				</div>
+			<!--{/if}-->
+
+				<div id="qmenu_menu" class="p_pop {if !$_G['uid']}blk{/if}" style="display: none;">
+					<!--{if $_G['uid']}-->
+					<ul>
+						<!--{loop $_G['setting']['mynavs'] $nav}-->
+							<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}-->
+								<li>$nav[code]</li>
+							<!--{/if}-->
+						<!--{/loop}-->
+					</ul>
+					<!--{else}-->
+						<div class="ptm pbw hm">
+							{lang my_nav_login}
+						</div>
+					<!--{/if}-->
+				</div>
+		<!--{/if}-->
+
+
+		<!--{hook/global_header}-->
+	<!--{/if}-->
+

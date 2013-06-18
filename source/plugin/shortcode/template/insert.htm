@@ -1,0 +1,10 @@
+<!--{block return}-->
+<!--{if $pic}-->
+<style>
+        #toptb a#nav_shortcode {width: 10px;background: url(source/plugin/shortcode/images/ewm.gif) no-repeat 50% 50%;text-indent: -9999px;overflow: hidden;}
+</style>
+<a id="nav_shortcode" href="plugin.php?id=shortcode&action=page" onclick="showWindow('page', this.href);return false;">{lang shortcode:page}</a>
+<!--{else}-->
+<a class="showmenu curl" href="plugin.php?id=shortcode&action=page" onclick="showWindow('page', this.href);return false;">{lang shortcode:page}</a>
+<!--{/if}-->
+<!--{/block}-->

@@ -1,0 +1,271 @@
+<!--{template common/header}-->
+<style>
+        .groupbtn{float:left;margin:0 2px;padding:0 0 0 7px !important;height:25px;background:url(source/plugin/shortcode/images/n_rate.png) no-repeat 0 0 !important;line-height:25px;text-align:center;cursor:pointer;}
+        .groupbtn:hover{text-decoration:none;}
+        .groupbtn span{display:block;background:url(source/plugin/shortcode/images/n_rate.png) no-repeat right 100% !important;padding-right:7px;}
+        #tips{position:relative;}
+        .tipl{color:#B1B1B1;display:block;height:8px;top:56px;margin-left:20px;position:absolute;z-index:99;}
+        .tipr{color:#FEFEE9;display:block;height:8px;top:55px;margin-left:20px;position:absolute;z-index:111;}
+        .vct{font: 12px/1.5 Tahoma;margin:0;text-align:left;}
+        .contips{border:1px solid #B1B1B1;margin-top:8px;margin-right:-5px;background-color:#FEFEE9;border-radius: 3px;padding: 5px;width:120px;position:absolute;top:-80px;right:0;}
+</style>
+<script type="text/javascript">$('scbar').style.display = 'none';</script>
+<div id="pt" class="bm cl">
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&raquo;</em><a href="plugin.php?id=shortcode">$navtitle</a><em>&raquo;</em>
+                <!--{if $action == 'index'}-->{lang shortcode:text}
+                <!--{elseif $action == 'bookmark'}-->{lang shortcode:bookmark}
+	        <!--{elseif $action == 'email'}-->{lang shortcode:email}
+	        <!--{elseif $action == 'ms'}-->{lang shortcode:ms}
+                <!--{elseif $action == 'vcard'}-->{lang shortcode:vcard}
+                <!--{elseif $action == 'short'}-->{lang shortcode:short}
+                <!--{elseif $action == 'long'}-->{lang shortcode:long}
+	        <!--{/if}-->
+	</div>
+</div>
+<div id="ct" class="ct2_a wp cl">
+        <div class="mn">
+                <ul class="tb cl">
+                        <li {if $action == 'index'}class="a"{/if}><a href="plugin.php?id=shortcode">{lang shortcode:text}</a></li>
+                        <li {if $action == 'bookmark'}class="a"{/if}><a href="plugin.php?id=shortcode&action=bookmark">{lang shortcode:bookmark}</a></li>
+                        <li {if $action == 'email'}class="a"{/if}><a href="plugin.php?id=shortcode&action=email">{lang shortcode:email}</a></li>
+                        <li {if $action == 'ms'}class="a"{/if}><a href="plugin.php?id=shortcode&action=ms">{lang shortcode:ms}</a></li>
+                        <li {if $action == 'vcard'}class="a"{/if}><a href="plugin.php?id=shortcode&action=vcard">{lang shortcode:vcard}</a></li>
+                        <li class="y"><a href="plugin.php?id=shortcode&action=long" class="groupbtn xi2"><span>{lang shortcode:long}</span></a></li>
+                        <li class="y"><a href="plugin.php?id=shortcode&action=short" class="groupbtn xi1"><span>{lang shortcode:short}</span></a></li>
+                </ul>
+                <div class="bm bw0">
+                        <div id="ct" class="wp cl pbw">
+	                        <div class="z" style="width: 530px;">
+                                        <p class="tbmu mbm xi2">
+                                                <!--{if $action == 'index'}-->{lang shortcode:texthelp}
+                                                <!--{elseif $action == 'bookmark'}-->{lang shortcode:bookmarkhelp}
+	                                        <!--{elseif $action == 'email'}-->{lang shortcode:emailhelp}
+	                                        <!--{elseif $action == 'ms'}-->{lang shortcode:mshelp}
+                                                <!--{elseif $action == 'vcard'}-->{lang shortcode:vcardhelp}
+                                                <!--{elseif $action == 'short'}-->{lang shortcode:shorthelp}
+                                                <!--{elseif $action == 'long'}-->{lang shortcode:longhelp}
+	                                        <!--{/if}-->
+                                        </p>
+		                        <div class="bm bw0" style="background-color: #dfeaf4;">
+			                        <div class="bm_c">
+                                                        <!--表单开始-->
+                                                        <iframe id="formsubmit" name="formsubmit" style="display:none;"></iframe>
+                                                        <form action="plugin.php?id=shortcode&action=$action" method='POST' autocomplete="off" target="formsubmit" enctype="multipart/form-data">
+                                                        <input type="hidden" value="{FORMHASH}" name="formhash" />
+                                                        <input type="hidden" name="command" />
+                                                        <table cellspacing="0" cellpadding="0" class="tfm">
+                                                        <!--{if $action == 'index'}-->
+                                                        <tr>
+	                                                        <th><span class="rq">*</span>{lang shortcode:text}</th>
+                                                                <td><textarea name="text" id="text" class="pt" style="color:#999;" rows="6" cols="40" onblur="javascript:if(''==this.value)this.value='$diy';this.style.color = '#999';" onfocus="javascript:if('$diy'==this.value)this.value='';this.style.color = '#444';" tabIndex="1">$texter</textarea>
+                                                                </td>
+                                                        </tr>
+                                                        <!--{elseif $action == 'bookmark'}-->
+                                                        <tr>
+	                                                        <th><span class="rq">*</span>{lang shortcode:book_title}</th>
+                                                                <td><input name="title" type="text" class="px vm" value="$title" tabIndex="1"/></td>
+                                                        </tr>
+                                                        <tr>
+	                                                        <th><span class="rq">*</span>{lang shortcode:book_url}</th>
+                                                                <td><input name="url" type="text" class="px vm" value="$url" tabIndex="1"/></td>
+                                                        </tr>
+                                                        <!--{elseif $action == 'email'}-->
+                                                        <tr>
+	                                                        <th><span class="rq">*</span>{lang shortcode:email_email}</th>
+                                                                <td><input name="email" type="text" class="px vm" value="$email" tabIndex="1"/></td>
+                                                        </tr>
+                                                        <tr>
+	                                                        <th><span class="rq">*</span>{lang shortcode:email_subject}</th>
+                                                                <td><input name="subject" type="text" class="px vm" value="$subject" tabIndex="1"/></td>
+                                                        </tr>
+                                                        <tr>
+	                                                        <th><span class="rq">*</span>{lang shortcode:email_message}</th>
+                                                                <td><textarea name="message" id="message"  class="pt" rows="4" cols="40"  tabIndex="1">$message</textarea></td>
+                                                        </tr>
+                                                        <!--{elseif $action == 'ms'}-->
+                                                        <tr>
+	                                                        <th><span class="rq">*</span>{lang shortcode:ms_phone}</th>
+                                                                <td><input name="phone" type="text" class="px vm" value="$phone" tabIndex="1"/></td>
+                                                        </tr>
+                                                        <tr>
+                                                                <th><span class="rq">*</span>{lang shortcode:ms_text}</th>
+                                                                <td><textarea name="text" id="text"  class="pt" rows="4" cols="40"  tabIndex="1">$text</textarea></td>
+                                                        </tr>
+                                                        <tr>
+                                                                <th>{lang shortcode:ms_type}</th>
+                                                                <td><input name="mstype" type="radio" id="mstype" value="SMS" {if $mstype == 'SMS'}checked="checked"{/if}/>{lang shortcode:ms_sms}
+                                                                    <input name="mstype" type="radio" id="mstype" value="MMS" {if $mstype == 'MMS'}checked="checked"{/if}/>{lang shortcode:ms_mms}
+                                                                </td>
+                                                        </tr>          
+                                                        <!--{elseif $action == 'vcard'}-->
+                                                        <tr>
+	                                                        <th><span class="rq">*</span>{lang shortcode:vcard_name}</th>
+                                                                <td><input name="name" type="text" class="px vm" value="$name" tabIndex="1"/></td>
+                                                        </tr>
+                                                        <tr>
+	                                                        <th><span class="rq">*</span>{lang shortcode:vcard_phone}</th>
+                                                                <td><input name="phone" type="text" class="px vm" value="$phone" tabIndex="1"/></td>
+                                                        </tr>
+                                                        <tr>
+	                                                        <th>{lang shortcode:vcard_email}</th>
+                                                                <td><input name="email" type="text" class="px vm" value="$email" tabIndex="1"/></td>
+                                                        </tr>
+                                                        <tr>
+	                                                        <th>{lang shortcode:vcard_msn}</th>
+                                                                <td><input name="title" type="text" class="px vm" value="$title" tabIndex="1"/></td>
+                                                        </tr>
+                                                        <tr>
+	                                                        <th>{lang shortcode:vcard_url}</th>
+                                                                <td><input name="url" type="text" class="px vm" value="$url" tabIndex="1"/></td>
+                                                        </tr>
+                                                        <tr>
+	                                                        <th>{lang shortcode:vcard_org}</th>
+                                                                <td><input name="org" type="text" class="px vm" value="$org" tabIndex="1"/></td>
+                                                        </tr>
+                                                        <tr>
+	                                                        <th>{lang shortcode:vcard_address}</th>
+                                                                <td><input name="address" type="text" class="px vm" value="$address" tabIndex="1"/></td>
+                                                        </tr>
+                                                        <tr>
+                                                                <th>{lang shortcode:vcard_note}</th>
+                                                                <td><textarea name="note" id="note"  class="pt" rows="3" cols="40"  tabIndex="1">$note</textarea></td>
+                                                        </tr>
+                                                        <!--{elseif $action == 'short'}-->
+                                                        <tr>
+	                                                        <th><span class="rq">*</span>{lang shortcode:long_url}</th>
+                                                                <td><textarea name="long_url_s" id="text"  class="pt" rows="6" cols="40"  tabIndex="1">$long_url_s</textarea></td>
+                                                        </tr>
+                                                        <tr>
+	                                                        <th>{lang shortcode:short_url}</th>
+                                                                <td id="short_s"><input type="text" class="px vm" value="$short_url_s" readonly="readonly" tabIndex="1" />
+							        
+                                                                </td>
+                                                        </tr>
+                                                        <!--{elseif $action == 'long'}-->           
+                                                        <tr>
+	                                                        <th><span class="rq">*</span>{lang shortcode:short_url}</th>
+                                                                <td><input name="short_url_l" type="text" class="px vm" value="$short_url_l" tabIndex="1"/></td>
+                                                        </tr>
+                                                        <tr>
+	                                                        <th>{lang shortcode:long_url}</th>
+                                                                <td id="long_l"><textarea type="text" class="pt" rows="6" cols="40" readonly="readonly" tabIndex="1">$long_url_l</textarea>
+							        
+                                                                </td>
+                                                        </tr>
+                                                        <!--{/if}-->
+                                                        <!--{if $action != 'short' && $action != 'long'}-->                                     
+                                                        <tr>
+	                                                        <th>{lang shortcode:pic}</th>
+                                                                <td>
+                                                                        <b>{lang shortcode:pic_size}：</b><input type="hidden" name="EC_level" value="150" />
+                                                                        <input name="size" type="radio" id="size" value="150" {if $size == '150'}checked="checked"{/if}/>{lang shortcode:pic_big}
+                                                                        <input name="size" type="radio" id="size" value="120" {if $size == '120'}checked="checked"{/if}/>{lang shortcode:pic_middle}
+                                                                        <input name="size" type="radio" id="size" value="90" {if $size == '90'}checked="checked"{/if}/>{lang shortcode:pic_small}
+                                                                        <b>&nbsp;&nbsp;&nbsp;&nbsp;{lang shortcode:pic_error}：</b><input type="hidden" name="EC_level" value="L" />
+                                                                        <input name="EC_level" type="radio" id="EC_level" value="L" {if $EC_level == 'L'}checked="checked"{/if}/>{lang shortcode:pic_bottum}
+                                                                        <input name="EC_level" type="radio" id="EC_level" value="M" {if $EC_level == 'M'}checked="checked"{/if}/>{lang shortcode:pic_middle}
+                                                                        <input name="EC_level" type="radio" id="EC_level" value="H" {if $EC_level == 'H'}checked="checked"{/if}/>{lang shortcode:pic_top}
+                                                                </td>
+                                                        </tr>
+                                                        <!--{/if}-->                                                
+                                                        <tr>
+	                                                        <th></th>
+                                                                <td  id="sharecode">
+                                                                        <!--jiathis分享代码-->
+                                                                        $jiathis
+                                                                        <script type="text/javascript">
+                                                                                var jiathis_config={//图片分享参数
+                                                                        	        data_track_clickback:true,
+                                                                                	url:"{eval echo $share}",
+                                                                                	summary:"{eval echo $summary}",
+                                                                                	title:"{eval echo $sharetitle}#{eval echo $tqqtitle}#",
+                                                                                	pic:"{eval echo $short_url}",
+                                                                                	appkey:{
+                                                                                		"tqq":"{eval echo $config['tqq']}"
+                                                                                	},
+                                                                                	hideMore:false
+                                                                                }
+                                                                        </script>
+                                                                        <!--jiathis分享代码结束-->
+                                                                </td>
+                                                        </tr> 
+                                                        <tr>
+	                                                        <th></th>
+                                                                <td>
+                                                                        <!--{if $action == 'short'}-->
+                                                                        <button class="pn pnc" name="codesubmit" onclick="command.value = 'made';" value="true" type="submit"><strong>{lang shortcode:short}</strong></button>
+                                                                        <!--{elseif $action == 'long'}-->
+                                                                        <button class="pn pnc" name="codesubmit" onclick="command.value = 'made';" value="true" type="submit"><strong>{lang shortcode:long}</strong></button>  
+                                                                        <!--{else}--> 
+                                                                        <button class="pn pnc" name="codesubmit" onclick="command.value = 'made';" value="true" type="submit"><strong>{lang shortcode:made}</strong></button> 
+                                                                        <button class="pn vm" name="codesubmit" onclick="command.value = 'down';" id="down" value="true" type="submit" style="{if empty($view)}display:none;{/if}"><strong>{lang shortcode:down}</strong></button>
+                                                                        <!--{/if}--> 
+                                                                </td>
+                                                        </tr>
+                                                        </table>
+                                                        </form>
+                                                        <!--表单结束-->
+                                                </div>
+                                        </div>
+                                        <!--底部介绍或广告-->
+					$config[shortads]
+				        {lang shortcode:shortcode_summary}
+                                        <!--底部介绍或广告结束-->
+			        </div>
+                                <div class="z" style="margin-top: 10px; width: 256px; height: 448px; background: url(source/plugin/shortcode/images/qrbg.png) no-repeat 0 0;">
+                                        <div style="margin:62px 23px 101px 52px; padding:5px;background:;">
+                                                <table cellspacing="0" cellpadding="0" height=275 width=170 >
+                                                <tr>
+	                                                <td id="code" height=252 valign=top style="color:#FFF;word-break:break-all;overflow:auto;">
+                                                                <img src="$long_url" style="border: 1px solid #fff;padding:5px;" />
+                                                                <p style="color:#FEFEE9"><strong>
+                                                                        <!--{if empty($view) && $action != 'short' && $action != 'long'}-->{lang shortcode:exsemple}
+                                                                        <!--{else}-->
+                                                                                <!--{if $action == 'index'}-->{lang shortcode:text}
+                                                                                <!--{elseif $action == 'bookmark'}-->{lang shortcode:bookmark}
+	                                                                        <!--{elseif $action == 'email'}-->{lang shortcode:email}
+	                                                                        <!--{elseif $action == 'ms'}-->{lang shortcode:ms}
+                                                                                <!--{elseif $action == 'vcard'}-->{lang shortcode:vcard}
+                                                                                <!--{elseif $action == 'short'}-->{lang shortcode:short}
+                                                                                <!--{elseif $action == 'long'}-->{lang shortcode:long}
+	                                                                        <!--{/if}-->
+                                                                        <!--{/if}--></strong>
+                                                                </p>
+                                                                <p><!--{if empty($view)}-->$url_this<!--{else}-->$text_cut<!--{/if}--></p>                                                                                                                                                                                                    
+                                                        </td>
+                                                </tr>
+                                                <tr>
+	                                                <td align=center>
+                                                                <div id="tips">
+                                                                <!--短址提示开始-->
+                                                                <div id="tip" class="contips xi3" style="{if $_G['cookie']['short']}display:none;{/if}">
+                                                                        <span class="tipl">{lang shortcode:tiplr}</span>
+                                                                        <span class="tipr">{lang shortcode:tiplr}</span>
+                                                                        <p class="vct" id="vct">{lang shortcode:tips}</p>
+                                                                        <a href="javascript:;" id="known" class="xi3 y">{lang shortcode:know}</a>
+                                                                </div>
+                                                                <script type="text/javascript" reload="1">
+                                                                        $('known').onclick = function() {
+                                                                                $('tip').style.display = 'none';
+                                                                                setcookie('short', 1, 86400*7);
+                                                                        }
+                                                                </script>
+                                                                <!--短址提示结束-->
+                                                                </div>
+                                                                <div id="short">
+                                                                <input type="text" class="px vm" onclick="this.select();setCopy(this.value, '{lang shortcode:success_tips}');"  value="$short_url" style="width:150px;" readonly="readonly" tabIndex="1" />
+                                                                </div>
+                                                        </td>
+                                                </tr>
+                                                </table>
+                                        </div>
+                                </div>
+                        </div>     
+                </div>
+        </div>
+        <div class="appl">
+                <!--{template common/userabout}-->
+        </div>
+</div>
+<!--{subtemplate common/footer}-->
