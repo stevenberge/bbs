@@ -376,3 +376,15 @@
 <?PHP exit;?>	1371494092	admin	1	127.0.0.1	styles	GET={preview=yes; styleid=7; }; POST={};
 <?PHP exit;?>	1371494103	admin	1	127.0.0.1	styles	GET={namenew={1=默认风格; 5=tqun; 6=听雨轩V2; 7=庆阳论坛原创风格; }; defaultnew=7; stylesubmit=提交; }; POST={namenew={1=默认风格; 5=tqun; 6=听雨轩V2; 7=庆阳论坛原创风格; }; defaultnew=7; stylesubmit=提交; };
 <?PHP exit;?>	1371494115	admin	1	127.0.0.1	styles	GET={}; POST={};
+<?PHP exit;?>	1371580577	admin	1	127.0.0.1		GET={}; POST={};
+<?PHP exit;?>	1371580579	admin	1	127.0.0.1	index	GET={}; POST={};
+<?PHP exit;?>	1371580583	admin	1	127.0.0.1	nav	GET={}; POST={};
+<?PHP exit;?>	1371580585	admin	1	127.0.0.1	styles	GET={}; POST={};
+<?PHP exit;?>	1371580590	admin	1	127.0.0.1	styles	GET={namenew={1=默认风格; 5=tqun; 6=听雨轩V2; 7=庆阳论坛原创风格; 8=大气灰系-璈俊工作室; 9=大气灰系-璈俊工作室_GqEb; 10=庆阳论坛原创风格_ZEzX; }; defaultnew=7; stylesubmit=提交; }; POST={namenew={1=默认风格; 5=tqun; 6=听雨轩V2; 7=庆阳论坛原创风格; 8=大气灰系-璈俊工作室; 9=大气灰系-璈俊工作室_GqEb; 10=庆阳论坛原创风格_ZEzX; }; defaultnew=7; stylesubmit=提交; };
+<?PHP exit;?>	1371580601	admin	1	127.0.0.1	styles	GET={}; POST={};
+<?PHP exit;?>	1371580786	admin	1	127.0.0.1	styles	GET={namenew={1=默认风格; 5=tqun; 6=听雨轩V2; 7=庆阳论坛原创风格; 8=大气灰系-璈俊工作室; 9=大气灰系-璈俊工作室_GqEb; 10=庆阳论坛原创风格_ZEzX; }; defaultnew=7; delete={0=8; 1=9; }; stylesubmit=提交; }; POST={namenew={1=默认风格; 5=tqun; 6=听雨轩V2; 7=庆阳论坛原创风格; 8=大气灰系-璈俊工作室; 9=大气灰系-璈俊工作室_GqEb; 10=庆阳论坛原创风格_ZEzX; }; defaultnew=7; delete={0=8; 1=9; }; stylesubmit=提交; };
+<?PHP exit;?>	1371580788	admin	1	127.0.0.1	styles	GET={delete={0=8; 1=9; }; confirmed=确定; stylesubmit=true; }; POST={confirmed=确定; };
+<?PHP exit;?>	1371580790	admin	1	127.0.0.1	styles	GET={}; POST={};
+<?PHP exit;?>	1371580806	admin	1	127.0.0.1	styles	GET={namenew={1=默认风格; 5=tqun; 6=听雨轩V2; 7=庆阳论坛原创风格; 10=庆阳论坛原创风格_ZEzX; }; delete={0=6; }; defaultnew=7; stylesubmit=提交; }; POST={namenew={1=默认风格; 5=tqun; 6=听雨轩V2; 7=庆阳论坛原创风格; 10=庆阳论坛原创风格_ZEzX; }; delete={0=6; }; defaultnew=7; stylesubmit=提交; };
+<?PHP exit;?>	1371580807	admin	1	127.0.0.1	styles	GET={delete={0=6; }; confirmed=确定; stylesubmit=true; }; POST={confirmed=确定; };
+<?PHP exit;?>	1371580811	admin	1	127.0.0.1	styles	GET={}; POST={};
